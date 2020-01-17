@@ -1,0 +1,48 @@
+App.js 
+
+        import React, { useState } from 'react';
+        //import Header from './Header';
+
+        // REACT é  baseado em 3 pilares:
+        // Componente : é uma função que retorna algum conteúdo HTML, js. (Isolamento de um trecho da aplicação, 
+        // que não inflinja o resto dos outros componentes.)
+
+        // Estado: Uma informação mantida pelo proprioo componente. (lida e mantida pelo proprio componente)
+
+        // Propriedade:  Informações que um componente pai (App()) passa par ao componente FILHO.
+        //-----------------------------------------------------------------------------------------
+        // Desestruturação:  Pega rum OBJETO ou um VETOR e dividir ele em VARIAVEIS.
+        //IMUTABILIDADE : React acredita que NUNCA VAI ALTERAR UM DADO E SEMPRE VAI CRIAR UM NOVO DADO A PARTIR DO VALOR ANTERIOR DELE!
+
+
+
+        function App() {
+        const [counter, setCounter] = useState(0);
+
+        function incrementCounter(){
+            //alert('Hello')
+            setCounter(counter + 1);
+        }
+
+
+        return (
+            <>
+            <h1>Contador: {counter}</h1>
+            <button onClick={incrementCounter}>Incrementar</button>
+            </>
+        );
+        }
+
+        export default App;
+
+        -----------------------------------------------------------------------------------------------------------------
+
+ index.js
+        import React from 'react';
+        import ReactDOM from 'react-dom';
+        import App from './App';
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+
+
+        //JSX (JavaScript + HTML)
