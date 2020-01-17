@@ -68,6 +68,8 @@ function App() {
 
     setGithubUsername('');
     setTechs('');
+
+    setDevs([...devs, response.data]);
   }
 
 
@@ -131,17 +133,17 @@ function App() {
       <main>
         <ul>
           {devs.map(dev => (
-            <li className="dev-item">
-            <header>
-              <img src="https://avatars1.githubusercontent.com/u/9930662?s=400&u=2702013821662f419e02c91f915fab9771e558b2&v=4" alt="Lucas Fazzi"/>
-              <div className="user-info">
-                <strong>Lucas Fazzi</strong>
-                <span> Python, React Native, Node.js</span>
-              </div>
-            </header>
-            <p>Developer, Gamer, CyberSecurity Enthusiast</p>
-            <a href="https://github.com/lucasfazzib">Acessar perfil no Github</a>
-          </li>
+            <li key={dev._id} className="dev-item">
+              <header>
+                <img src={dev.avatar_url} alt={dev.name} />
+                <div className="user-info">
+                  <strong>{dev.name}</strong>
+                  <span> {dev.techs.join(',')}</span>
+                </div>
+              </header>
+              <p>{dev.bio}</p>
+              <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
+            </li>
           ))}
         </ul>
       </main>
