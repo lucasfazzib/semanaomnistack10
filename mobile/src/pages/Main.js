@@ -5,6 +5,7 @@ import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard} f
  import { MaterialIcons } from "@expo/vector-icons";
 
  import api from '../services/api';
+ import { connect, disconnect, subscribeToNewDevs } from '../services/socket';
 
 
  function Main( {navigation} ){
@@ -34,6 +35,25 @@ import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard} f
         loadInitialLocation();
     }, []);
 
+
+    useEffect(() => {  
+        subscribeToNewDevs( dev => setDevs([...devs, dev]));
+    }, [devs] );
+
+
+    function setupWebsocket(){
+        disconnect();
+
+        const { latitude, longitude } = currentRegion;
+
+        connect(
+            latitude,
+            longitude,
+            techs,
+        );
+    }
+
+
     async function loadDevs(){
         const { latitude, longitude } = currentRegion;
 
@@ -44,15 +64,16 @@ import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard} f
                 techs
             }
         });
-    
+    setCurrentRegion
 
         setDevs(response.data.devs);
+        setupWebsocket();
     }
 
 
     function handleRegionChanged(region){
         //console.log(region);
-        setCurrentRegion(region);
+        (region);
     }
 
 

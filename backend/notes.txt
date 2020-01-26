@@ -32,3 +32,15 @@ app.post('/users', (request, response) => {
     console.log(request.body);
     return response.json({ message: 'Hello Omnistack' });
 });
+
+
+Websockets
+
+Req. HTTP 
+
+    - GET, POST, DELETE, PUT
+    
+    -> Frontend -> BackEnd -> RESPOSTA Front-End
+
+
+websocket ->  Backend -> Frontend
