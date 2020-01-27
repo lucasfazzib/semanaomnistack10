@@ -11,11 +11,6 @@
 <img alt="License" src="https://img.shields.io/badge/license-MIT-%2304D361">
 </p>
 
-<p align="center">
-  <a href="#rocket-sobre-a-aplicação">Sobre a Aplicação</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
-</p>
-
 <h3 align="center">
   #rocketseat, #nodejs,#reactjs, #reactnative, #javascript, #express, #mvc, #mongodb, #axios, #eslint, #sucrase, #socket
 </h3>
